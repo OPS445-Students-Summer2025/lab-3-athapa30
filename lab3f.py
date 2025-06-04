@@ -1,27 +1,26 @@
 #!/usr/bin/env python3
 
 
-my_list = [100, 200, 300, 'six hundred']
+my_list = [1, 2, 3, 4, 5]
 
-def give_list():
+def add_item_to_list(ordered_list):
     
-    return my_list
+    ordered_list.append(ordered_list[-1] + 1)
 
-def give_first_item():
+def remove_items_from_list(ordered_list, items_to_remove):
     
-    return str(my_list[0])
+    for item in items_to_remove:
+        if item in ordered_list:
+            ordered_list.remove(item)
 
-def give_first_and_last_item():
-    
-    return [my_list[0], my_list[-1]]
 
-def give_second_and_third_item():
-    
-    return [my_list[1], my_list[2]]
+if __name__ == '__main__':
+    print(my_list)
+    add_item_to_list(my_list)
+    add_item_to_list(my_list)
+    add_item_to_list(my_list)
+    print(my_list)
+    remove_items_from_list(my_list, [1, 5, 6])
+    print(my_list)
 
-if __name__ == '__main__':   
-    print(give_list())
-    print(give_first_item())
-    print(give_first_and_last_item())
-    print(give_second_and_third_item())
 
